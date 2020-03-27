@@ -16,27 +16,27 @@
       </el-table-column>
       <el-table-column label="学号" width="200" align="center">
         <template slot-scope="scope">
-          {{ scope.row.user_id }}
+          {{ scope.row.id }}
         </template>
       </el-table-column>
       <el-table-column label="姓名" width="150" align="center">
         <template slot-scope="scope">
-          {{ scope.row.user_name }}
+          {{ scope.row.name }}
         </template>
       </el-table-column>
       <el-table-column label="学院" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.school_name }}</span>
+          <span>{{ scope.row.college }}</span>
         </template>
       </el-table-column>
       <el-table-column label="专业" align="center">
         <template slot-scope="scope">
-          {{ scope.row.major_name }}
+          {{ scope.row.major }}
         </template>
       </el-table-column>
       <el-table-column label="班级" align="center">
         <template slot-scope="scope">
-          {{ scope.row.class_name }}
+          {{ scope.row.class }}
         </template>
       </el-table-column>
       <el-table-column label="操作" width="255" align="center">
@@ -73,7 +73,8 @@ export default {
     fetchData() {
       this.listLoading = true
       getList().then(response => {
-        this.list = response.data.records
+        this.list = response.data.items
+        console.log(this.list)
         this.listLoading = false
       })
     },
@@ -84,11 +85,11 @@ export default {
       this.$router.push({
         name: 'Detail',
         params: {
-          id: row.user_id,
-          name: row.user_name,
-          class: row.class_name,
-          major: row.major_name,
-          college: row.school_name
+          id: row.id,
+          name: row.name,
+          class: row.class,
+          major: row.major,
+          college: row.college
         }
       })
     }

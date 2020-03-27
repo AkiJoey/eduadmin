@@ -16,35 +16,32 @@
       </el-table-column>
       <el-table-column label="名称" align="center">
         <template slot-scope="scope">
-          {{ scope.row.examName }}
+          {{ scope.row.name }}
         </template>
       </el-table-column>
       <el-table-column label="院系" width="200" align="center">
         <template slot-scope="scope">
-          <!-- {{ scope.row.college }} -->
-          医药信息工程学院
+          {{ scope.row.college }}
         </template>
       </el-table-column>
       <el-table-column label="科目" width="200" align="center">
         <template slot-scope="scope">
-          <!-- {{ scope.row.subject }} -->
-          计算机组成原理
+          {{ scope.row.subject }}
         </template>
       </el-table-column>
       <el-table-column label="类型" width="120" align="center">
         <template slot-scope="scope">
-          <!-- {{ scope.row.type }} -->
-          课题练习
+          {{ scope.row.type }}
         </template>
       </el-table-column>
       <el-table-column label="创建者" width="120" align="center">
         <template slot-scope="scope">
-          {{ scope.row.creator }}
+          {{ scope.row.author }}
         </template>
       </el-table-column>
       <el-table-column label="创建时间" width="180" align="center">
         <template slot-scope="scope">
-          {{ scope.row.createtime.substr(0, 19).replace('T', ' ') }}
+          {{ scope.row.time.substr(0, 19).replace('T', ' ') }}
         </template>
       </el-table-column>
       <el-table-column class-name="status-col" label="状态" width="100" align="center">
@@ -96,7 +93,7 @@ export default {
     fetchData() {
       this.listLoading = true
       getList().then(response => {
-        this.list = response.data.data
+        this.list = response.data.items
         this.listLoading = false
       })
     },

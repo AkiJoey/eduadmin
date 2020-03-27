@@ -2,7 +2,6 @@ import Mock from 'mockjs'
 
 const data = Mock.mock({
   'items|30': [{
-    id: '@id',
     chapter: '@integer(1, 12)',
     'type|1': ['选择题', '填空题', '简答题'],
     title: '@csentence(30, 100)'

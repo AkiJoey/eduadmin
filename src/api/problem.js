@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/question/getExerciseDetails/1/100',
+    url: '/problem/list',
     method: 'get',
     params
   })

@@ -16,7 +16,7 @@
       </el-table-column>
       <el-table-column label="章节" width="120" align="center">
         <template slot-scope="scope">
-          {{ scope.row.chapter_id }}
+          {{ scope.row.chapter }}
         </template>
       </el-table-column>
       <el-table-column label="类型" width="150" align="center">
@@ -26,7 +26,7 @@
       </el-table-column>
       <el-table-column label="题目" align="center">
         <template slot-scope="scope">
-          {{ scope.row.content }}
+          {{ scope.row.title }}
         </template>
       </el-table-column>
       <el-table-column label="操作" width="255" align="center">
@@ -72,7 +72,7 @@ export default {
     fetchData() {
       this.listLoading = true
       getList().then(response => {
-        this.list = response.data.data.records
+        this.list = response.data.items
         this.listLoading = false
       })
     },
